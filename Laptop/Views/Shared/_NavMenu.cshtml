@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Laptop.Models.Catagory>
+<nav id="navigation">
+    <!-- container -->
+    <div class="container">
+        <!-- responsive-nav -->
+        <div id="responsive-nav">
+            <!-- NAV -->
+            <ul class="main-nav nav navbar-nav">
+                <li class="active">
+                    @Html.ActionLink("Home", "Index", "Home")
+                </li>
+                <li>
+                    @Html.ActionLink("All Products", "Index", "Products")
+                </li>
+                @foreach (var item in Model)
+                {
+                    <li><a href="/Products?catid=@item.CatagoryId">@Html.DisplayFor(modelItem => item.CatagoryName)</a></li>
+                }
+            </ul>
+            <!-- /NAV -->
+        </div>
+        <!-- /responsive-nav -->
+    </div>
+    <!-- /container -->
+</nav>
